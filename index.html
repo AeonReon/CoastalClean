@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coastal Clean — Airbnb Cleaning Specialists | North Coast, Northern Ireland</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green-deep:#2B4A3E;--green-mid:#3D6B56;--green-light:#5A8F74;--green-pale:#E8F0EC;--gold:#B5943A;--gold-light:#D4B85C;--gold-pale:#EDE0BA;--cream:#F7F4EE;--white:#FFFFFF;--off-black:#1A2420;--charcoal:#1E2E28;--text-dark:#1A2420;--text-muted:#5C6D64;--success:#2D7A4F;--urgent:#C0392B;--border:rgba(43,74,62,0.12);--shadow:0 4px 30px rgba(0,0,0,0.08)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--cream);line-height:1.6;overflow-x:hidden}.container{max-width:1140px;margin:0 auto;padding:0 24px}.text-center{text-align:center}
+
+.top-bar{background:var(--charcoal);color:var(--gold-light);padding:10px 0;font-size:13px;letter-spacing:.5px;text-align:center;font-weight:500}.top-bar .pulse{display:inline-block;width:8px;height:8px;background:var(--urgent);border-radius:50%;margin-right:8px;animation:pulse 2s ease infinite}@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+
+.nav{background:rgba(247,244,238,.97);border-bottom:1px solid var(--border);padding:14px 0;position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}.nav .container{display:flex;justify-content:space-between;align-items:center}.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}.nav-brand img{width:48px;height:48px;border-radius:50%}.nav-brand-text{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--green-deep);letter-spacing:-.5px}.nav-brand-text span{color:var(--gold)}.nav-links{display:flex;gap:30px;align-items:center;list-style:none}.nav-links a{text-decoration:none;color:var(--text-muted);font-size:14px;font-weight:500;transition:color .3s}.nav-links a:hover{color:var(--green-deep)}.nav-cta{background:var(--green-deep)!important;color:var(--gold-light)!important;padding:10px 22px!important;border-radius:6px;font-weight:600!important;transition:all .3s!important}.nav-cta:hover{background:var(--gold)!important;color:var(--charcoal)!important}.mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}.mobile-toggle span{display:block;width:24px;height:2px;background:var(--green-deep);margin:5px 0;transition:.3s}
+
+/* HERO — Background image with text overlay */
+.hero{position:relative;min-height:70vh;display:flex;align-items:center;background:var(--charcoal);overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('images/HeroImage.png') center/cover no-repeat}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,46,36,.88) 0%,rgba(30,51,41,.82) 35%,rgba(36,61,50,.75) 60%,rgba(43,74,62,.7) 100%)}
+.hero .container{position:relative;z-index:2;max-width:800px;text-align:center;padding-top:60px;padding-bottom:60px}
+.hero-content{align-self:center}
+.hero-pre{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:18px;animation:fadeInUp .7s ease both}
+.hero-pre::before{content:'🏠 '}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,52px);color:var(--white);line-height:1.1;margin-bottom:22px;animation:fadeInUp .7s ease .1s both}
+.hero h1 em{color:var(--gold-light);font-style:italic}
+.hero-sub{font-size:17px;color:rgba(255,255,255,.85);line-height:1.7;margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto;animation:fadeInUp .7s ease .2s both}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;animation:fadeInUp .7s ease .3s both}
+.hero-proof{margin-top:40px;display:flex;gap:28px;justify-content:center;animation:fadeInUp .7s ease .4s both}.hero-stat{text-align:center}.hero-stat .number{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--gold-light)}.hero-stat .label{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;letter-spacing:.3px;line-height:1.4}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--charcoal);padding:16px 30px;border-radius:6px;font-weight:700;font-size:15px;text-decoration:none;border:none;cursor:pointer;transition:all .3s;letter-spacing:.3px}.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(181,148,58,.3)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);padding:16px 30px;border-radius:6px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid rgba(255,255,255,.25);transition:all .3s}.btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
+
+.urgency-bar{background:linear-gradient(135deg,var(--green-deep),var(--green-mid));color:var(--gold-light);padding:16px 0;text-align:center;font-weight:600;font-size:14px}.urgency-bar strong{font-weight:800;color:var(--white)}
+
+section{padding:100px 0}.section-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}.section-label::before{content:'';width:24px;height:1px;background:var(--gold)}.section-title{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,42px);line-height:1.15;margin-bottom:20px;color:var(--green-deep)}.section-desc{font-size:17px;color:var(--text-muted);max-width:600px;line-height:1.7}
+
+.problem{background:var(--white)}.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:50px}.problem-list{list-style:none;display:flex;flex-direction:column;gap:20px}.problem-item{display:flex;gap:16px;padding:20px;background:var(--cream);border-radius:10px;border-left:3px solid var(--green-mid);transition:transform .3s}.problem-item:hover{transform:translateX(4px)}.problem-icon{font-size:24px;flex-shrink:0;width:40px;text-align:center}.problem-item h4{font-size:15px;font-weight:700;margin-bottom:4px}.problem-item p{font-size:14px;color:var(--text-muted);line-height:1.5}.problem-img{border-radius:12px;overflow:hidden;position:relative;aspect-ratio:4/5}.problem-img img{width:100%;height:100%;object-fit:cover}
+
+.about{background:var(--cream)}.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center;margin-top:50px}.about-img{border-radius:12px;overflow:hidden;position:relative;aspect-ratio:3/4}.about-img img{width:100%;height:100%;object-fit:cover}.about-img-badge{position:absolute;bottom:20px;left:20px;background:var(--green-deep);color:var(--gold-light);padding:12px 18px;border-radius:8px;font-size:13px;font-weight:600}.trust-points{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:30px}.trust-point{display:flex;align-items:flex-start;gap:14px;font-size:15px;line-height:1.6}.trust-check{width:24px;height:24px;background:rgba(43,74,62,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--green-deep);font-size:13px;font-weight:700;margin-top:2px}
+
+.services{background:var(--green-deep);color:var(--white);position:relative;overflow:hidden}.services .section-title{color:var(--white)}.services .section-desc{color:rgba(255,255,255,.6)}.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}.service-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;transition:all .4s;position:relative}.service-card:hover{border-color:rgba(181,148,58,.3);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.3)}.service-card-img{height:200px;overflow:hidden}.service-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.service-card:hover .service-card-img img{transform:scale(1.05)}.service-card-body{padding:28px}.service-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px}.service-card h3{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:12px;color:var(--white)}.service-card p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:20px}.service-price{display:flex;align-items:baseline;gap:6px}.service-price .from{font-size:13px;color:rgba(255,255,255,.4)}.service-price .amount{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--gold-light)}.service-price .unit{font-size:13px;color:rgba(255,255,255,.4)}.service-popular{position:absolute;top:16px;right:16px;background:var(--gold);color:var(--charcoal);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;z-index:2}
+
+.deep-clean-ed{background:var(--cream)}.dc-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:50px}.dc-visual{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:36px;text-align:center}.dc-visual .dc-stat{font-family:'Playfair Display',serif;font-size:64px;font-weight:700;color:var(--urgent);line-height:1}.dc-visual .dc-stat-label{font-size:15px;color:var(--text-muted);margin-top:8px;line-height:1.5}.dc-visual .dc-divider{width:50px;height:2px;background:var(--gold);margin:24px auto}.dc-visual .dc-stat-2{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--green-deep)}.dc-timeline{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:16px}.dc-timeline li{display:flex;gap:14px;font-size:15px;line-height:1.5;align-items:flex-start}.dc-timeline li::before{content:'';width:10px;height:10px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px}
+
+.priority{background:linear-gradient(135deg,var(--off-black) 0%,var(--charcoal) 50%,#2A3025 100%);color:var(--white);position:relative;overflow:hidden}.priority::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(181,148,58,.08) 0%,transparent 70%);pointer-events:none}.priority-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.priority-content .section-title{color:var(--white)}.priority-desc{font-size:16px;color:rgba(255,255,255,.65);line-height:1.8;margin-top:20px}.priority-features{list-style:none;margin-top:30px;display:flex;flex-direction:column;gap:14px}.priority-features li{display:flex;align-items:center;gap:12px;font-size:15px;color:rgba(255,255,255,.8)}.priority-features li::before{content:'⚡'}.priority-card{background:rgba(181,148,58,.08);border:1px solid rgba(181,148,58,.25);border-radius:16px;padding:44px;text-align:center;position:relative}.priority-card-label{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--urgent);color:var(--white);padding:6px 20px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase}.priority-card h3{font-family:'Playfair Display',serif;font-size:28px;color:var(--white);margin-top:10px;margin-bottom:8px}.priority-card .old-price{font-size:18px;color:rgba(255,255,255,.4);text-decoration:line-through;margin-right:8px}.priority-card .new-price{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:var(--gold-light);margin:16px 0}.priority-card .new-price span{font-size:18px;font-weight:400;color:rgba(255,255,255,.5)}.priority-card p{font-size:14px;color:rgba(255,255,255,.55);margin-bottom:28px;line-height:1.6}
+
+.testimonials{background:var(--white)}.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}.testimonial-card{background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:32px;transition:all .3s}.testimonial-card:hover{box-shadow:var(--shadow)}.testimonial-stars{color:var(--gold);font-size:16px;letter-spacing:2px;margin-bottom:16px}.testimonial-card blockquote{font-size:15px;line-height:1.7;color:var(--text-dark);font-style:italic;margin-bottom:20px}.testimonial-author{display:flex;align-items:center;gap:12px}.testimonial-avatar{width:40px;height:40px;border-radius:50%;background:var(--green-deep);display:flex;align-items:center;justify-content:center;color:var(--gold-light);font-weight:700;font-size:14px}.testimonial-name{font-weight:700;font-size:14px}.testimonial-role{font-size:12px;color:var(--text-muted)}
+
+.how-it-works{background:var(--cream)}.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:50px}.step{text-align:center;background:var(--white);border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:all .3s}.step:hover{box-shadow:var(--shadow);transform:translateY(-4px)}.step-img{height:200px;overflow:hidden}.step-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.step:hover .step-img img{transform:scale(1.05)}.step-body{padding:24px 20px}.step-number{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:rgba(43,74,62,.12);line-height:1;margin-bottom:10px}.step h4{font-size:16px;font-weight:700;margin-bottom:10px;color:var(--green-deep)}.step p{font-size:14px;color:var(--text-muted);line-height:1.6}
+
+.apply{background:var(--green-deep);color:var(--white);position:relative;overflow:hidden}.apply::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=1600&q=80') center/cover;opacity:.05}.apply .container{position:relative;z-index:2}.apply .section-title{color:var(--white)}.apply-intro{font-size:17px;color:rgba(255,255,255,.65);max-width:640px;line-height:1.7;margin-bottom:50px}.apply-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:start}.apply-form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:40px}.form-group{margin-bottom:22px}.form-group label{display:block;font-size:13px;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,.7);margin-bottom:8px}.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:15px;transition:border-color .3s}.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}.form-group select{cursor:pointer}.form-group select option{background:var(--green-deep);color:var(--white)}.form-group textarea{resize:vertical;min-height:100px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.apply-benefits{padding-top:20px}.apply-benefits h3{font-family:'Playfair Display',serif;font-size:26px;margin-bottom:24px;color:var(--white)}.benefit-item{display:flex;gap:16px;margin-bottom:24px;padding:20px;background:rgba(181,148,58,.06);border-radius:10px;border:1px solid rgba(181,148,58,.12)}.benefit-icon{width:44px;height:44px;background:rgba(181,148,58,.15);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}.benefit-item h4{font-size:15px;font-weight:700;color:var(--white);margin-bottom:4px}.benefit-item p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.5}
+
+.also{background:var(--white);padding:60px 0}.also-inner{background:var(--green-pale);border:1px solid var(--border);border-radius:16px;padding:48px;text-align:center}.also-inner h3{font-family:'Playfair Display',serif;font-size:26px;color:var(--green-deep);margin-bottom:12px}.also-inner p{font-size:16px;color:var(--text-muted);max-width:600px;margin:0 auto 28px;line-height:1.7}.also-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}.also-tag{background:var(--white);border:1px solid var(--border);border-radius:30px;padding:10px 20px;font-size:14px;font-weight:600;color:var(--green-deep)}
+
+.faq{background:var(--cream)}.faq-list{max-width:740px;margin:50px auto 0}.faq-item{background:var(--white);border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}.faq-question{width:100%;background:none;border:none;padding:22px 28px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:var(--text-dark);text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:color .3s}.faq-question:hover{color:var(--green-mid)}.faq-toggle{font-size:22px;color:var(--gold);transition:transform .3s;font-weight:300}.faq-item.active .faq-toggle{transform:rotate(45deg)}.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}.faq-item.active .faq-answer{max-height:300px}.faq-answer-inner{padding:0 28px 22px;font-size:15px;color:var(--text-muted);line-height:1.7}
+
+.final-cta{background:linear-gradient(135deg,var(--gold),var(--gold-light),var(--gold-pale));padding:80px 0;text-align:center}.final-cta h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);color:var(--green-deep);margin-bottom:16px}.final-cta p{font-size:17px;color:rgba(43,74,62,.7);max-width:540px;margin:0 auto 32px;line-height:1.6}.btn-dark{display:inline-flex;align-items:center;gap:8px;background:var(--green-deep);color:var(--gold-light);padding:18px 38px;border-radius:6px;font-weight:700;font-size:16px;text-decoration:none;border:none;cursor:pointer;transition:all .3s}.btn-dark:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+
+.footer{background:var(--off-black);color:rgba(255,255,255,.5);padding:60px 0 30px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}.footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.footer-brand img{width:40px;height:40px;border-radius:50%}.footer-brand-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white)}.footer p{font-size:14px;line-height:1.6}.footer h4{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}.footer ul{list-style:none}.footer ul li{margin-bottom:10px}.footer ul a{color:rgba(255,255,255,.5);text-decoration:none;font-size:14px;transition:color .3s}.footer ul a:hover{color:var(--gold)}.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:13px}.footer-bottom a{color:var(--gold);text-decoration:none}
+
+.fade-up{opacity:1;transform:translateY(0);transition:opacity 0.7s ease,transform 0.7s ease}.fade-up.will-animate{opacity:0;transform:translateY(30px)}.fade-up.visible{opacity:1;transform:translateY(0)}
+.form-submit.success{background:#25D366!important;color:white!important;pointer-events:none}.form-success-msg{text-align:center;padding:40px 20px}
+.whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:999;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .3s;text-decoration:none}.whatsapp-float:hover{transform:scale(1.1)}.whatsapp-float svg{width:32px;height:32px;fill:white}
+
+@media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr)}.steps-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}.dc-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.nav-links{display:none}.mobile-toggle{display:block}.nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:20px 24px;border-bottom:1px solid var(--border);gap:16px}.hero{min-height:auto}.hero-content{padding:40px 0 20px}.hero-proof{flex-wrap:wrap;gap:16px}.problem-grid,.about-grid,.priority-grid,.apply-grid{grid-template-columns:1fr;gap:40px}.services-grid,.testimonials-grid{grid-template-columns:1fr}.steps-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:10px;text-align:center}section{padding:70px 0}}
+@media(max-width:480px){.hero-ctas{flex-direction:column}.btn-primary,.btn-secondary,.btn-dark{width:100%;justify-content:center}.also-tags{flex-direction:column;align-items:center}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="pulse"></span>
+  <strong>NORTH COAST AIRBNB SPECIALISTS</strong> — Limited availability for new turnover clients
+</div>
+
+<nav class="nav">
+  <div class="container">
+    <a href="#" class="nav-brand">
+      <img src="images/coastal_clean_transparent_circle.png" alt="Coastal Clean logo">
+      <span class="nav-brand-text">Coastal <span>Clean</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why-deep-clean">Why Deep Clean?</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#apply" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-pre">Attention Airbnb &amp; Holiday Let Owners</div>
+      <h1>Is Your Property Getting the <em>5‑Star Clean</em> It&nbsp;Deserves?</h1>
+      <p class="hero-sub">Cleanliness is the #1 factor guests rate — and the fastest way to lose your Superhost badge. Our dedicated Airbnb turnover team handles every changeover so your property is guest-ready, spotless, and reviewed like a hotel.</p>
+      <div class="hero-ctas">
+        <a href="#apply" class="btn-primary">Get a Free Quote →</a>
+        <a href="#services" class="btn-secondary">How It Works</a>
+      </div>
+      <div class="hero-proof">
+        <div class="hero-stat"><div class="number">4.8+</div><div class="label">Rating Needed for<br>Superhost Status</div></div>
+        <div class="hero-stat"><div class="number">20%</div><div class="label">More Bookings for<br>Top-Rated Properties</div></div>
+        <div class="hero-stat"><div class="number">Local</div><div class="label">North Coast Team<br>Coleraine &amp; Area</div></div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<div class="urgency-bar">
+  <div class="container">⭐ <strong>Listings with 4.8+ cleanliness scores get up to 20% more bookings.</strong> Is your turnover team protecting your rating — or risking it?</div>
+</div>
+
+<section class="problem">
+  <div class="container">
+    <span class="section-label">Why This Matters</span>
+    <h2 class="section-title">Your Guests Decide in the<br>First 10 Seconds</h2>
+    <p class="section-desc">Before they even unpack, they've already formed an opinion. And cleanliness is the single biggest factor in whether they leave you 5 stars or 4.</p>
+    <div class="problem-grid">
+      <ul class="problem-list">
+        <li class="problem-item"><span class="problem-icon">⭐</span><div><h4>Cleanliness is rated separately — and it's weighted heavily</h4><p>Airbnb guests rate cleanliness as its own category. A 4-star cleanliness score drags your overall rating down fast, especially with fewer reviews.</p></div></li>
+        <li class="problem-item"><span class="problem-icon">🏆</span><div><h4>Superhost requires 4.8+ overall — there's no room for slip-ups</h4><p>Superhost status means more visibility, more bookings, and higher nightly rates. One sloppy turnover can set you back an entire quarter.</p></div></li>
+        <li class="problem-item"><span class="problem-icon">👃</span><div><h4>Guests forgive decor — they never forgive dirty</h4><p>A hair in the shower, a sticky counter, a musty pillow. These are the things guests remember when they write their review — and they always mention them.</p></div></li>
+        <li class="problem-item"><span class="problem-icon">📉</span><div><h4>Dropping below 4.7 can cost you up to 30% of bookings</h4><p>Airbnb's algorithm favours top-rated listings. A cleanliness dip doesn't just hurt reviews — it pushes you down in search results where fewer guests ever see you.</p></div></li>
+      </ul>
+      <div class="problem-img">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80" alt="Pristine Airbnb interior">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <span class="section-label">Our Airbnb Services</span>
+    <h2 class="section-title">Everything Your Property Needs to Stay <em style="font-family:'Playfair Display',serif;color:var(--gold-light)">Five-Star</em> Clean</h2>
+    <p class="section-desc">From same-day turnovers to quarterly deep resets, we handle every stage of keeping your Airbnb guest-ready and review-proof.</p>
+    <div class="services-grid">
+      <div class="service-card"><span class="service-popular">Core Service</span><div class="service-card-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Airbnb turnover"></div><div class="service-card-body"><span class="service-tag">Between Every Guest</span><h3>Turnover Cleans</h3><p>Full changeover: beds stripped and hotel-made with fresh linen, bathrooms sanitised, kitchen reset, floors done, surfaces wiped, amenities restocked, and a final walkthrough before check-in.</p><div class="service-price"><span class="from">from</span><span class="amount">£25</span><span class="unit">/hour</span></div></div></div>
+      <div class="service-card"><div class="service-card-img"><img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&q=80" alt="Deep clean"></div><div class="service-card-body"><span class="service-tag">Every 4–8 Weeks</span><h3>Scheduled Deep Cleans</h3><p>The reset your property needs regularly. Inside appliances, behind furniture, grout scrubbing, window tracks, skirting boards, upholstery freshening — the hidden grime that slowly kills your ratings.</p><div class="service-price"><span class="from">from</span><span class="amount">£30</span><span class="unit">/hour</span></div></div></div>
+      <div class="service-card"><div class="service-card-img"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Linen service"></div><div class="service-card-body"><span class="service-tag">Hands-Free Hosting</span><h3>Linen &amp; Restocking</h3><p>Fresh linen swaps, towel rotation, toiletry top-ups, and welcome touches — so you never have to think about changeover logistics. Just focus on bookings.</p><div class="service-price"><span class="from">from</span><span class="amount">£25</span><span class="unit">/hour</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="deep-clean-ed" id="why-deep-clean">
+  <div class="container">
+    <span class="section-label">The Hidden Problem</span>
+    <h2 class="section-title">Turnover Cleans Keep Things Tidy.<br>But They <span style="color:var(--gold)">Can't</span> Keep Things Fresh.</h2>
+    <p class="section-desc">Even with a great turnover after every guest, grime builds up in places nobody reaches during a quick changeover. That's when the "it looks clean but smells a bit off" reviews start appearing.</p>
+    <div class="dc-grid">
+      <div>
+        <p class="section-desc" style="margin-top:28px">Airbnb themselves recommend a deep clean every 2–3 months for active properties. High-turnover listings on the North Coast — especially during summer — need it even more often.</p>
+        <p class="section-desc" style="margin-top:16px">Without regular deep cleans, this builds up invisibly:</p>
+        <ul class="dc-timeline">
+          <li><strong>Inside the oven &amp; microwave</strong> — grease and food splatter guests always check</li>
+          <li><strong>Behind the fridge &amp; under furniture</strong> — dust balls that cause stale odours</li>
+          <li><strong>Grout, tile seals &amp; shower screens</strong> — mould and limescale that screams "neglected"</li>
+          <li><strong>Mattress, pillows &amp; upholstery</strong> — sweat, allergens, and that "not quite fresh" feeling</li>
+          <li><strong>Window tracks &amp; skirting boards</strong> — the first thing detail-oriented guests spot</li>
+        </ul>
+      </div>
+      <div class="dc-visual">
+        <div class="dc-stat">30%</div>
+        <div class="dc-stat-label">Potential revenue loss for listings<br>that drop below 4.7 in cleanliness</div>
+        <div class="dc-divider"></div>
+        <div class="dc-stat-2">4–8 weeks</div>
+        <div class="dc-stat-label">Recommended deep clean frequency<br>for active Airbnb properties</div>
+        <div class="dc-divider"></div>
+        <div style="margin-top:20px"><a href="#apply" class="btn-primary">Schedule a Deep Clean →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="images/Profile Image.png" alt="Coastal Clean team">
+        <div class="about-img-badge">✓ Coleraine · Local &amp; Fully Insured</div>
+      </div>
+      <div>
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-title">A Small Local Team That<br>Treats Your Property <span style="color:var(--gold)">Like Their Own.</span></h2>
+        <p class="section-desc" style="margin-bottom:10px">Coastal Clean is a small, close-knit team based right here on the North Coast. We specialise in Airbnb and holiday let turnovers — the quick, thorough, reliable changeovers that keep your ratings high and your guests happy.</p>
+        <p class="section-desc">We use professional-grade steam equipment and eco-friendly products. Our team is trained, insured, and trusted with keys and smart lock access by hosts across the area.</p>
+        <ul class="trust-points">
+          <li class="trust-point"><span class="trust-check">✓</span><span>Local team — friendly faces you'll get to know</span></li>
+          <li class="trust-point"><span class="trust-check">✓</span><span>Professional-grade steam equipment as standard</span></li>
+          <li class="trust-point"><span class="trust-check">✓</span><span>Trusted with keys and smart lock access by our hosts</span></li>
+          <li class="trust-point"><span class="trust-check">✓</span><span>Eco-friendly, non-toxic products safe for guests</span></li>
+          <li class="trust-point"><span class="trust-check">✓</span><span>Fully insured — complete peace of mind</span></li>
+          <li class="trust-point"><span class="trust-check">✓</span><span>Built for tight turnover windows and back-to-back bookings</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label" style="justify-content:center">What Hosts Say</span>
+      <h2 class="section-title">Our Clients Say It Best</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><blockquote>"Our cleanliness rating went from 4.6 to a consistent 5.0 within weeks of switching. Guests now comment on how spotless the place is in almost every review. Worth every penny."</blockquote><div class="testimonial-author"><div class="testimonial-avatar">MK</div><div><div class="testimonial-name">Mark &amp; Karen D.</div><div class="testimonial-role">Airbnb Superhost — 2 Properties</div></div></div></div>
+      <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><blockquote>"I used to stress about every changeover. Now I just get a message saying it's done, and I know my guests are walking into a spotless property. The team is always on time and thorough."</blockquote><div class="testimonial-author"><div class="testimonial-avatar">JO</div><div><div class="testimonial-name">James O.</div><div class="testimonial-role">Holiday Let Owner — Portstewart</div></div></div></div>
+      <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><blockquote>"They do the deep clean every 6 weeks and honest to God, the difference is night and day. The grout, the oven, behind the fridge — things I'd never have thought of. My guests can feel it."</blockquote><div class="testimonial-author"><div class="testimonial-avatar">SF</div><div><div class="testimonial-name">Sarah F.</div><div class="testimonial-role">Airbnb Host — Portrush</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label" style="justify-content:center">Getting Started</span>
+      <h2 class="section-title">Up and Running in 4 Simple Steps</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step"><div class="step-img"><img src="images/GetInTouch.png" alt="Get in touch with Coastal Clean"></div><div class="step-body"><div class="step-number">01</div><h4>Get In Touch</h4><p>Fill in the form or message us on WhatsApp. Tell us about your property and your typical turnover schedule.</p></div></div>
+      <div class="step"><div class="step-img"><img src="images/We Visit Your Property.png" alt="We visit your property"></div><div class="step-body"><div class="step-number">02</div><h4>We Visit Your Property</h4><p>A quick walkthrough to understand the layout, check-in logistics, and any special requirements.</p></div></div>
+      <div class="step"><div class="step-img"><img src="images/First Turnover Clean.png" alt="First turnover clean"></div><div class="step-body"><div class="step-number">03</div><h4>First Turnover Clean</h4><p>We arrive with all equipment and products. You'll see the standard immediately — and so will your next guests.</p></div></div>
+      <div class="step"><div class="step-img"><img src="images/Ongoing and Hands Free.png" alt="Ongoing hands-free cleaning service"></div><div class="step-body"><div class="step-number">04</div><h4>Ongoing &amp; Hands-Free</h4><p>We sync with your booking calendar. Turnovers happen automatically. Deep cleans scheduled in advance. You focus on hosting.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="priority" id="priority">
+  <div class="container">
+    <div class="priority-grid">
+      <div class="priority-content">
+        <span class="section-label">Last-Minute Turnovers</span>
+        <h2 class="section-title">Guest Checking In <em style="font-family:'Playfair Display',serif;color:var(--gold-light)">Today?</em><br>We Can Help.</h2>
+        <p class="priority-desc">Same-day turnovers happen. A guest extends, another arrives hours later, or your regular cleaner cancels. Our priority rate gets your property guest-ready — fast.</p>
+        <ul class="priority-features">
+          <li>Guaranteed response within 4 hours</li>
+          <li>Same-day turnover (subject to availability)</li>
+          <li>Full equipment and products included</li>
+          <li>Photo confirmation when complete</li>
+        </ul>
+      </div>
+      <div class="priority-card">
+        <span class="priority-card-label">⚡ Emergency Turnovers</span>
+        <h3>Priority Access Rate</h3>
+        <div><span class="old-price">£25/hr</span><div class="new-price">£40<span>/hr</span></div></div>
+        <p>Same high-quality clean. Same professional team. Just without the lead time. For when your next guest is arriving today and the property isn't ready.</p>
+        <a href="#apply" class="btn-primary" style="width:100%;justify-content:center">Request Emergency Turnover →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="apply" id="apply">
+  <div class="container">
+    <span class="section-label">Get Started</span>
+    <h2 class="section-title">Get a Free Quote for Your Property</h2>
+    <p class="apply-intro">Tell us about your Airbnb or holiday let and we'll come back to you with a tailored quote — usually within 24 hours.</p>
+    <div class="apply-grid">
+      <form class="apply-form" id="quoteForm">
+        <!-- Web3Forms -->
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="New Quote Request — Coastal Clean Website">
+        <input type="hidden" name="redirect" value="">
+        <!-- Honeypot anti-spam -->
+        <input type="checkbox" name="botcheck" style="display:none!important">
+        <div class="form-row"><div class="form-group"><label>Your Name *</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" placeholder="07XXX XXXXXX" required></div></div>
+        <div class="form-row"><div class="form-group"><label>Email Address *</label><input type="email" name="email" placeholder="you@email.com" required></div><div class="form-group"><label>Property Location *</label><input type="text" name="location" placeholder="e.g. Portstewart, Portrush, Coleraine..." required></div></div>
+        <div class="form-group"><label>What do you need? *</label><select name="service" required><option value="" disabled selected>Select a service...</option><option>Airbnb / Holiday Let Turnover Cleans</option><option>Scheduled Deep Clean</option><option>Turnover + Regular Deep Cleans (Package)</option><option>Linen &amp; Restocking Service</option><option>Emergency / Same-Day Turnover</option><option>Not sure — need advice</option></select></div>
+        <div class="form-row"><div class="form-group"><label>Number of Bedrooms</label><select name="bedrooms"><option value="" disabled selected>Select...</option><option>1-2 Bedrooms</option><option>3 Bedrooms</option><option>4 Bedrooms</option><option>5+ Bedrooms</option></select></div><div class="form-group"><label>Typical Turnovers Per Month</label><select name="turnovers"><option value="" disabled selected>Select...</option><option>1-4 per month</option><option>5-8 per month</option><option>9-12 per month</option><option>12+ per month</option></select></div></div>
+        <div class="form-group"><label>Anything else we should know?</label><textarea name="message" placeholder="e.g. Back-to-back bookings most weekends, need same-day turnovers. Property has a hot tub..."></textarea></div>
+        <button type="submit" class="btn-primary form-submit" style="width:100%;justify-content:center;font-size:16px;padding:18px">Send My Quote Request →</button>
+        <p style="text-align:center;font-size:13px;color:rgba(255,255,255,.4);margin-top:14px">We reply within 24 hours. Your details are never shared.</p>
+      </form>
+      <div class="apply-benefits">
+        <h3>Why Hosts Choose Us</h3>
+        <div class="benefit-item"><div class="benefit-icon">🔑</div><div><h4>Trusted Key Holders</h4><p>Most hosts give us key access or smart lock codes. We let ourselves in, clean, lock up, and send confirmation.</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">📋</div><div><h4>Airbnb-Specific Checklists</h4><p>Detailed room-by-room checklist built for holiday let turnovers — not a generic house clean.</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">📅</div><div><h4>Calendar Sync</h4><p>Tell us your booking schedule and we handle the rest. No chasing, no reminders.</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">⚡</div><div><h4>Same-Day Emergency Cover</h4><p>Priority rate (£40/hr) can get your property turned over fast — often within hours.</p></div></div>
+        <div class="benefit-item"><div class="benefit-icon">📸</div><div><h4>Photo Confirmation</h4><p>Photos after every turnover so you know exactly what your guests are walking into.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="also">
+  <div class="container">
+    <div class="also-inner">
+      <h3>We Also Clean Homes — Not Just Airbnbs</h3>
+      <p>While Airbnb turnovers are our speciality, we're happy to help with other cleaning needs too. Just mention it in your enquiry.</p>
+      <div class="also-tags">
+        <span class="also-tag">🏠 Weekly / Fortnightly Home Cleans</span>
+        <span class="also-tag">📦 Move-In / Move-Out Cleans</span>
+        <span class="also-tag">🎉 Post-Event / Party Clean</span>
+        <span class="also-tag">🏗️ Post-Renovation Clean</span>
+        <span class="also-tag">🪟 Window Cleaning</span>
+        <span class="also-tag">🔥 Oven &amp; Appliance Deep Clean</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label" style="justify-content:center">Common Questions</span>
+      <h2 class="section-title">Airbnb Hosts Ask Us This All the Time</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item active"><button class="faq-question" onclick="toggleFaq(this)">How quickly can you turn over a property?<span class="faq-toggle">+</span></button><div class="faq-answer"><div class="faq-answer-inner">For a standard 2-3 bedroom property, we typically need 2-3 hours depending on condition. We work with your check-out and check-in times. For same-day turnovers with tight windows, let us know in advance and we'll prioritise.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How often should I schedule a deep clean?<span class="faq-toggle">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Airbnb recommends every 2-3 months. For high-turnover properties (10+ guests a month), we suggest every 4-6 weeks. This tackles hidden grime that turnovers can't reach. Most hosts notice an immediate improvement in cleanliness scores after their first deep clean with us.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Do you bring your own products and equipment?<span class="faq-toggle">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes — everything. Professional-grade steam cleaners, eco-friendly products, fresh cloths, and all supplies. You don't need to provide anything.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What areas do you cover?<span class="faq-toggle">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Coleraine, Portstewart, Portrush, Castlerock, and the wider North Coast. If you're slightly outside, get in touch — we may still be able to help for regular contracts.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Can you handle back-to-back bookings?<span class="faq-toggle">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Absolutely — that's what we're set up for. Share your booking calendar and we schedule turnovers around your check-in/out times. We're used to tight windows and peak-season pressure.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How do you handle keys and access?<span class="faq-toggle">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Most hosts provide smart lock codes, key safes, or spare keys. All access info is stored securely and never shared. We're fully insured.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Protect Your Ratings. Free Up Your Time.</h2>
+    <p>Your guests expect a spotless property. Your reviews depend on it. Let a dedicated local team handle your turnovers — so you can focus on being a great host.</p>
+    <a href="#apply" class="btn-dark">Get a Free Quote →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="images/coastal_clean_transparent_circle.png" alt="Coastal Clean">
+          <span class="footer-brand-name">Coastal Clean</span>
+        </div>
+        <p>Airbnb &amp; holiday let cleaning specialists on the North Coast. Professional-grade equipment. Reliable turnovers. Trusted by hosts across Coleraine, Portstewart, and Portrush.</p>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="#services">Turnover Cleans</a></li><li><a href="#services">Scheduled Deep Cleans</a></li><li><a href="#services">Linen &amp; Restocking</a></li><li><a href="#priority">Emergency Turnovers</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#about">About</a></li><li><a href="#testimonials">Reviews</a></li><li><a href="#faq">FAQ</a></li><li><a href="#apply">Get a Quote</a></li><li><a href="https://www.facebook.com/p/Coastal-Clean-61573610122128/" target="_blank">Facebook</a></li></ul></div>
+      <div><h4>Get in Touch</h4><ul><li><a href="#">WhatsApp: 07XXX XXXXXX</a></li><li><a href="#">Coleraine, Northern Ireland</a></li><li><a href="https://www.facebook.com/p/Coastal-Clean-61573610122128/" target="_blank">Message on Facebook</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Coastal Clean. All rights reserved.</span>
+      <span>Website by <a href="https://www.realfastwebsite.com" target="_blank">www.realfastwebsite.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/44XXXXXXXXXX" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+/* FAQ toggle */
+function toggleFaq(btn){const item=btn.parentElement;const wasActive=item.classList.contains('active');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('active'));if(!wasActive)item.classList.add('active')}
+
+/* Web3Forms AJAX submission */
+document.getElementById('quoteForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=this.querySelector('.form-submit');
+  btn.disabled=true;btn.textContent='Sending...';
+  try{
+    const res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(this)});
+    const data=await res.json();
+    if(data.success){
+      btn.textContent='Sent!';btn.classList.add('success');
+      setTimeout(()=>{
+        this.innerHTML='<div class="form-success-msg"><h3 style="font-family:Playfair Display,serif;font-size:24px;color:var(--white);margin-bottom:12px">Message Received!</h3><p style="color:rgba(255,255,255,.7);margin-bottom:20px">We\'ll be in contact with your quote within 24 hours.</p><a href="https://wa.me/44XXXXXXXXXX" class="btn-primary" style="justify-content:center">WhatsApp Us for a Faster Reply →</a></div>';
+      },800);
+    }else{btn.textContent='Something went wrong — try again';btn.disabled=false}
+  }catch(err){btn.textContent='Something went wrong — try again';btn.disabled=false}
+});
+
+/* Progressive enhancement scroll animations */
+if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:0.1});
+  document.querySelectorAll('.service-card,.testimonial-card,.step,.problem-item,.benefit-item,.dc-timeline li').forEach(el=>{el.classList.add('fade-up','will-animate');observer.observe(el)});
+}
+
+/* Smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){e.preventDefault();const target=document.querySelector(this.getAttribute('href'));if(target){target.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('navLinks').classList.remove('active')}})});
+</script>
+</body>
+</html>
